@@ -1,8 +1,8 @@
 package br.unifor.mimpreste.model;
 
-public class Pessoa {
+public class Pessoa implements IModel{
 
-    private Long id;
+    private Integer id;
     private String nome;
     private String telefone;
     private String email;
@@ -15,7 +15,7 @@ public class Pessoa {
         this(null, nome, telefone, email, foto);
     }
 
-    public Pessoa(Long id, String nome, String telefone, String email, String foto) {
+    public Pessoa(Integer id, String nome, String telefone, String email, String foto) {
         this.id = id;
         this.nome = nome;
         this.telefone = telefone;
@@ -23,11 +23,11 @@ public class Pessoa {
         this.foto = foto;
     }
 
-    public Long getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 

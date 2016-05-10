@@ -2,14 +2,14 @@ package br.unifor.mimpreste.model;
 
 import java.util.Date;
 
-public class Emprestimo {
+public class Emprestimo implements IModel{
 
     public enum EmprestimoStatus {
         PENDENTE,
         FINALIZADO;
     }
 
-    private Long id;
+    private Integer id;
     private Pessoa pessoa;
     private Livro livro;
     private Date dataEmprestimo;
@@ -23,7 +23,7 @@ public class Emprestimo {
         this(null, pessoa, livro, dataEmprestimo, dataDevolucao, status);
     }
 
-    public Emprestimo(Long id, Pessoa pessoa, Livro livro, Date dataEmprestimo, Date dataDevolucao, EmprestimoStatus status) {
+    public Emprestimo(Integer id, Pessoa pessoa, Livro livro, Date dataEmprestimo, Date dataDevolucao, EmprestimoStatus status) {
         this.id = id;
         this.pessoa = pessoa;
         this.livro = livro;
@@ -32,11 +32,11 @@ public class Emprestimo {
         this.status = status;
     }
 
-    public Long getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 

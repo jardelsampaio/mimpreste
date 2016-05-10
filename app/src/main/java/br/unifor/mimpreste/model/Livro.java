@@ -1,8 +1,8 @@
 package br.unifor.mimpreste.model;
 
-public class Livro {
+public class Livro implements IModel{
 
-    private Long id;
+    private Integer id;
     private String nome;
     private String autor;
     private int ano;
@@ -15,7 +15,7 @@ public class Livro {
         this(null, nome, autor, ano, imagem);
     }
 
-    public Livro(Long id, String nome, String autor, int ano, String imagem) {
+    public Livro(Integer id, String nome, String autor, int ano, String imagem) {
         this.id = id;
         this.nome = nome;
         this.autor = autor;
@@ -23,11 +23,11 @@ public class Livro {
         this.imagem = imagem;
     }
 
-    public Long getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
