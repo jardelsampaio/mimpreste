@@ -30,7 +30,7 @@ public class MimPrestaHelper extends SQLiteOpenHelper {
         try {
 
             AssetManager assetManager = mContext.getAssets();
-            InputStream in = assetManager.open("/db/create_database.sql");
+            InputStream in = assetManager.open("db/create_database.sql");
             BufferedReader reader = new BufferedReader(new InputStreamReader(in));
 
             String line = null;
@@ -50,7 +50,7 @@ public class MimPrestaHelper extends SQLiteOpenHelper {
         try {
 
             AssetManager assetManager = mContext.getAssets();
-            InputStream in = assetManager.open("/db/update_database.sql");
+            InputStream in = assetManager.open("db/update_database.sql");
             BufferedReader reader = new BufferedReader(new InputStreamReader(in));
 
             String line = null;

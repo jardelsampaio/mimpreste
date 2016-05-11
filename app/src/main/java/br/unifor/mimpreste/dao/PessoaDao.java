@@ -11,18 +11,39 @@ import br.unifor.mimpreste.model.Pessoa;
  */
 public class PessoaDao extends GenericDao<Pessoa> {
 
-    public PessoaDao(String tableName, Context context) {
-        super(tableName, context);
+    private static final String TABLE_PESSOA = "pessoas";
+
+    public PessoaDao(Context context) {
+        super(TABLE_PESSOA, context);
     }
 
     @Override
     public ContentValues getContentValues(Pessoa obj) {
-        return null;
+        ContentValues values = new ContentValues();
+
+        if(obj.getId() !=null){
+            values.put("_id", obj.getId());
+        }
+
+        values.put("nome", obj.getNome());
+        values.put("telefone", obj.getTelefone());
+        values.put("email", obj.getEmail());
+        values.put("foto", obj.getFoto());
+        return values;
     }
 
     @Override
     protected Pessoa createObjectFromCursor(Cursor cursor) {
-        return null;
+
+        int id = cursor.getInt(cursor.getColumnIndex("_id"));
+        String nome = cursor.getString(cursor.getColumnIndex("nome"));
+        String telefone = cursor.getString(cursor.getColumnIndex("telefone"));
+        String email = cursor.getString(cursor.getColumnIndex("email"));
+        String foto = cursor.getString(cursor.getColumnIndex("foto"));
+
+        Pessoa pessoa = new Pessoa(id, nome, telefone, email, foto);
+
+        return pessoa;
     }
 
 }
